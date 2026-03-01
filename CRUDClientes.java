@@ -5,14 +5,13 @@ import java.util.*;
 public class CRUDClientes{
 
     public final String NOMBRE_ARCHIVO = "clientes.csv";
-    public static List<Cliente> leerUsuarios() 
-throws IOException {
+    public static List<Cliente> leerUsuarios() throws IOException {
     List<Cliente> lista = new ArrayList<>();
     Scanner sc = new Scanner(new File(NOMBRE_ARCHIVO));
     while (sc.hasNextLine()) {
         String[] datos = sc.nextLine().split(",");
         lista.add(new Cliente(
-            Integer.parseInt(datos[0]),datos[1]));
+        Integer.parseInt(datos[0]),datos[1]));
     }
     sc.close();
     return lista;
@@ -21,7 +20,7 @@ throws IOException {
     public void eliminarclientes() throws IOException {
         
             
-            Scanner sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     System.out.println("Dígite el id del cliente que quieren eliminar");
     int id = sc.nextInt();
         ArrayList<Cliente> clientes = new ArrayList<>();
@@ -39,7 +38,7 @@ throws IOException {
         
     }
     }
-}
+
 
 
 
