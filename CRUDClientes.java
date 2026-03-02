@@ -2,12 +2,13 @@
 import java.io.*;
 import java.util.*;
 
+
 public class CRUDClientes{
 
     public final String NOMBRE_ARCHIVO = "clientes.csv";
     public static List<Cliente> leerUsuarios() throws IOException {
     List<Cliente> lista = new ArrayList<>();
-    Scanner sc = new Scanner(new File(NOMBRE_ARCHIVO));
+    Scanner sc = new Scanner(new File("clientes.csv"));
     while (sc.hasNextLine()) {
         String[] datos = sc.nextLine().split(",");
         lista.add(new Cliente(
@@ -24,7 +25,7 @@ public class CRUDClientes{
     System.out.println("Dígite el id del cliente que quieren eliminar");
     int id = sc.nextInt();
         ArrayList<Cliente> clientes = new ArrayList<>();
-        BufferedReader bw = new BufferedReader(new FileReader(NOMBRE_ARCHIVO));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(NOMBRE_ARCHIVO));
         String linea;
          List<Cliente> lista = leerUsuarios();
 
