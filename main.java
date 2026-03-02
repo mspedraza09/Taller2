@@ -70,31 +70,7 @@ public class main {
         }
     }
 
-    private static void listarPedidosDeCliente() throws IOException {
-        System.out.print("Ingrese el ID del cliente: ");
-        int idCliente = leerEnteroSeguro();
-
-        List<Pedido> pedidos = Pedido.obtenerPedidosPorCliente(idCliente, PEDIDOS_FILE);
-
-        if (pedidos.isEmpty()) {
-            System.out.println("No se encontraron pedidos para el cliente con ID " + idCliente);
-            return;
-        }
-
-        System.out.println("Pedidos del cliente con ID " + idCliente + ":");
-        for (Pedido pedido : pedidos) {
-            System.out.println(pedido);
-        }
-    private static int leerEnteroSeguro() {
-        while (true) {
-            String texto = SC.nextLine().trim();
-            try {
-                return Integer.parseInt(texto);
-            } catch (NumberFormatException e) {
-                System.out.print("Ingrese un número válido: ");
-            }
-        }
-    }
+   
     
 
 
